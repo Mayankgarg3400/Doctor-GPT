@@ -1,6 +1,8 @@
 # 🩺 Doctor-GPT
 
-**Doctor-GPT** is an AI-powered medical assistance platform designed to provide users with multiple ways to interact with an intelligent healthcare assistant through **text, vision, voice, and emergency assistance**.
+### AI-Powered Medical Assistance Platform
+
+Doctor-GPT is an AI-powered medical assistance platform that provides multiple ways to interact with an intelligent healthcare assistant through **Text, Vision, Voice, and Emergency Assistance**.
 
 > ⚠️ **Medical Disclaimer:** Doctor-GPT is an AI-based assistance and educational project. It is not a replacement for a qualified doctor or medical professional. For serious symptoms, diagnosis, treatment decisions, or emergencies, always consult a qualified healthcare professional or contact your local emergency services.
 
@@ -10,19 +12,19 @@
 
 ### 💬 Text-Based Medical Assistant
 
-Users can ask medical and health-related questions using natural language and receive AI-generated responses.
+Ask medical and health-related questions using natural language and receive AI-generated responses.
 
 ### 👁️ Vision-Based Medical Assistant
 
-Users can upload an image and interact with the AI system for image-based medical analysis.
+Upload an image and interact with the AI system for image-based medical analysis.
 
 ### 🎙️ Voice Interaction
 
-Doctor-GPT includes a voice interaction pipeline that supports:
+Doctor-GPT includes a voice interaction pipeline supporting:
 
-* 🎤 Speech-to-text
-* 🧠 AI-based response generation
-* 🔊 Text-to-speech
+* 🎤 Speech-to-Text
+* 🧠 AI-powered response generation
+* 🔊 Text-to-Speech
 
 ### 🚨 Emergency Assistant
 
@@ -30,7 +32,7 @@ A dedicated emergency assistant provides emergency-focused guidance and helps us
 
 ### 🧠 Medical Knowledge Retrieval
 
-The project includes a medical knowledge retrieval pipeline using a vector database to retrieve relevant information before generating responses.
+The project includes a medical knowledge retrieval pipeline that retrieves relevant information from a medical knowledge base before generating responses.
 
 ---
 
@@ -38,31 +40,31 @@ The project includes a medical knowledge retrieval pipeline using a vector datab
 
 ```text
                          ┌─────────────────────┐
-                         │    Doctor-GPT UI    │
-                         │     HTML/CSS/JS     │
+                         │     Doctor-GPT      │
+                         │     Web Interface   │
                          └──────────┬──────────┘
                                     │
-              ┌─────────────────────┼─────────────────────┐
-              │                     │                     │
-              ▼                     ▼                     ▼
-        Text Assistant       Vision Assistant     Emergency Assistant
-              │                     │                     │
-              └─────────────────────┼─────────────────────┘
+             ┌──────────────────────┼──────────────────────┐
+             │                      │                      │
+             ▼                      ▼                      ▼
+      Text Assistant        Vision Assistant       Emergency Assistant
+             │                      │                      │
+             └──────────────────────┼──────────────────────┘
                                     │
                                     ▼
                          ┌─────────────────────┐
                          │   Python Backend    │
-                         │   FastAPI / APIs    │
+                         │    FastAPI / API    │
                          └──────────┬──────────┘
                                     │
-                         ┌──────────┴──────────┐
-                         │                     │
-                         ▼                     ▼
-                  Medical RAG             AI Models
-                  / Vector Store          / LLM / Vision
-                         │
-                         ▼
-                  Medical Knowledge
+                    ┌───────────────┴───────────────┐
+                    │                               │
+                    ▼                               ▼
+             Medical RAG                       AI Models
+          Knowledge Retrieval              LLM / Vision Models
+                    │
+                    ▼
+             Medical Knowledge
 ```
 
 ---
@@ -116,53 +118,27 @@ Doctor-GPT/
 
 # 🛠️ Tech Stack
 
-## Frontend
-
-* HTML5
-* CSS3
-* JavaScript
-
-## Backend
-
-* Python
-* FastAPI
-* Uvicorn
-
-## AI / LLM
-
-* Ollama
-* Qwen-based local models
-* AI-powered response generation
-
-## RAG / Knowledge Retrieval
-
-* LangChain
-* FAISS
-* Medical knowledge base
-
-## Voice
-
-* SpeechRecognition
-* Google Speech Recognition
-* gTTS
-
-## Development Tools
-
-* Git
-* GitHub
-* uv
-* VS Code
+| Category           | Technologies                                       |
+| ------------------ | -------------------------------------------------- |
+| Frontend           | HTML5, CSS3, JavaScript                            |
+| Backend            | Python, FastAPI, Uvicorn                           |
+| AI / LLM           | Ollama, Qwen-based models                          |
+| RAG                | LangChain, FAISS                                   |
+| Voice              | SpeechRecognition, Google Speech Recognition, gTTS |
+| Version Control    | Git, GitHub                                        |
+| Package Management | uv                                                 |
+| Development        | VS Code                                            |
 
 ---
 
 # ⚙️ How It Works
 
-## 1️⃣ Text Assistant
+## 1. 💬 Text Assistant
 
 ```text
 User Question
       ↓
-Frontend
+Web Interface
       ↓
 Backend API
       ↓
@@ -175,27 +151,23 @@ Generated Response
 User
 ```
 
----
-
-## 2️⃣ Vision Assistant
+## 2. 👁️ Vision Assistant
 
 ```text
 Medical Image
       ↓
-Frontend
+Web Interface
       ↓
 Vision Backend
       ↓
-Vision-capable AI Model
+Vision AI Model
       ↓
 Image Analysis
       ↓
 Response
 ```
 
----
-
-## 3️⃣ Voice Assistant
+## 3. 🎙️ Voice Assistant
 
 ```text
 User Speech
@@ -211,9 +183,7 @@ Text-to-Speech
 Audio Response
 ```
 
----
-
-## 4️⃣ Emergency Assistant
+## 4. 🚨 Emergency Assistant
 
 ```text
 Emergency Query
@@ -229,7 +199,7 @@ Emergency Guidance
 
 # 🔐 Environment Variables
 
-Create a `.env` file in the project root.
+Create a `.env` file in the project root and add the required API keys.
 
 Example:
 
@@ -237,121 +207,129 @@ Example:
 GEMINI_API_KEY=your_api_key_here
 ```
 
-> Never commit API keys or other secrets to GitHub.
+> 🔒 Never upload API keys, passwords, tokens, or other secrets to GitHub.
 
-The `.gitignore` file is configured to prevent `.env` files from being uploaded.
+The `.gitignore` file is configured to prevent `.env` files from being committed.
 
 ---
 
-# 💻 Local Setup
+# 💻 Local Installation
 
-## 1. Clone the repository
+## 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Mayankgarg3400/Doctor-GPT.git
 cd Doctor-GPT
 ```
 
-## 2. Install dependencies
+## 2. Install Dependencies
 
-This project uses `uv` for Python dependency management.
+Doctor-GPT uses `uv` for Python dependency management.
 
 ```bash
 uv sync
 ```
 
-## 3. Configure environment variables
+## 3. Configure Environment Variables
 
-Create a `.env` file:
+Create a `.env` file and add the required configuration.
 
-```text
-.env
-```
-
-Add the required API keys and configuration.
-
-## 4. Start the backend
-
-Depending on the configured backend entry point:
+## 4. Start the Backend
 
 ```bash
 uv run uvicorn server:app --reload
 ```
 
-or:
+Depending on the configured application entry point, the backend may also be started with:
 
 ```bash
 uv run uvicorn main:app --reload
 ```
 
-## 5. Start the frontend
+## 5. Open the Frontend
 
-Open the frontend:
+Open:
 
 ```text
 doctor-gpt-site/index.html
 ```
 
-You can also serve the frontend using a local web server.
+or serve the frontend using a local development server.
 
 ---
 
-# 🔌 API Communication
-
-The frontend communicates with the Python backend through API endpoints.
-
-General flow:
+# 🔌 Application Flow
 
 ```text
-Frontend
-   ↓
-API Request
-   ↓
-Python Backend
-   ↓
-AI / RAG / Vision / Emergency Module
-   ↓
-AI Response
-   ↓
-Frontend
+                     USER
+                       │
+                       ▼
+              ┌─────────────────┐
+              │   Web Interface │
+              └────────┬────────┘
+                       │
+          ┌────────────┼────────────┐
+          │            │            │
+          ▼            ▼            ▼
+        TEXT         VISION       VOICE
+          │            │            │
+          └────────────┼────────────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │ Python Backend  │
+              └────────┬────────┘
+                       │
+             ┌─────────┴─────────┐
+             ▼                   ▼
+        Medical RAG           AI Models
+             │                   │
+             └─────────┬─────────┘
+                       ▼
+                  AI Response
+                       │
+                       ▼
+                     USER
 ```
 
 ---
 
 # 🔒 Security
 
-The project follows basic security practices:
+Doctor-GPT follows basic security practices:
 
 * API keys are stored using environment variables.
 * `.env` files are excluded from Git.
-* Large medical datasets are excluded from the public repository.
+* Large medical datasets are excluded from the repository.
 * Generated vector stores are excluded from Git.
-* Private credentials should never be exposed in frontend JavaScript.
+* Private credentials should never be placed inside frontend JavaScript.
 
 ---
 
-# 📌 Current Project Status
+# 📊 Project Status
 
-### Implemented
+### ✅ Implemented
 
-* ✅ Text-based medical assistant
-* ✅ Vision-based assistant
-* ✅ Voice interaction pipeline
-* ✅ Emergency assistant
-* ✅ Medical knowledge retrieval
-* ✅ Frontend interfaces
-* ✅ Python backend
-* ✅ GitHub repository
+* [x] Text-based medical assistant
+* [x] Vision-based assistant
+* [x] Voice interaction pipeline
+* [x] Emergency assistant
+* [x] Medical knowledge retrieval
+* [x] Frontend interfaces
+* [x] Python backend
+* [x] GitHub repository
 
-### In Progress / Planned
+### 🚀 Planned Improvements
 
-* 🚀 Production deployment
-* 🔐 Improved authentication and security
-* 📊 Logging and monitoring
-* 🧠 Improved medical RAG pipeline
-* ⚡ Performance optimization
-* 📱 Improved mobile UI
-* 🌐 Production-ready hosting
+* [ ] Production deployment
+* [ ] Improved authentication
+* [ ] Conversation history
+* [ ] Database integration
+* [ ] Better medical RAG pipeline
+* [ ] Improved performance
+* [ ] Production monitoring
+* [ ] Mobile UI improvements
+* [ ] Cloud deployment
 
 ---
 
@@ -359,15 +337,15 @@ The project follows basic security practices:
 
 Some planned improvements include:
 
-* Multi-model support
-* Better medical document retrieval
-* Conversation history
-* User authentication
-* Database integration
-* Improved emergency workflows
-* Production monitoring
-* Cloud deployment
-* Better mobile responsiveness
+* 🤖 Multi-model support
+* 🧠 Improved medical document retrieval
+* 💬 Persistent conversation history
+* 🔐 User authentication
+* 🗄️ Database integration
+* 🚨 Improved emergency workflows
+* 📊 Production monitoring
+* ☁️ Cloud deployment
+* 📱 Better mobile responsiveness
 
 ---
 
@@ -395,10 +373,9 @@ For serious symptoms, diagnosis, treatment decisions, or emergencies, consult a 
 
 # 👨‍💻 Author
 
-**Mayank Garg**
+### Mayank Garg
 
-GitHub:
-https://github.com/Mayankgarg3400
+🔗 **GitHub:** [Mayankgarg3400](https://github.com/Mayankgarg3400)
 
 ---
 

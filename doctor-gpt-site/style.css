@@ -1,0 +1,198 @@
+/* Global Styling */
+body {
+    background: #0d1117;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: #e6edf3;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* Titles */
+.title {
+    text-align: center;
+    font-size: 60px;
+    font-weight: 900;
+    color: #58a6ff;
+    text-shadow: 0 0 20px rgba(88,166,255,0.6);
+    animation: glowTitle 3s infinite alternate;
+}
+
+/* Slow glowing animation */
+@keyframes glowTitle {
+    from { text-shadow: 0 0 10px #58a6ff; }
+    to { text-shadow: 0 0 25px #58a6ff; }
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 22px;
+    color: #8b949e;
+    margin-bottom: 35px;
+    animation: slideDown 1s ease-out;
+}
+
+/* slide-down animation */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Button */
+.main-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 40px;
+    background: #238636;
+    color: white;
+    border-radius: 40px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(35,134,54,0.4);
+    animation: pulseBtn 2s infinite;
+}
+
+/* Button pulse animation */
+@keyframes pulseBtn {
+    0% { box-shadow: 0 0 10px rgba(35,134,54,0.4); }
+    50% { box-shadow: 0 0 25px rgba(35,134,54,0.8); }
+    100% { box-shadow: 0 0 10px rgba(35,134,54,0.4); }
+}
+
+.main-btn:hover {
+    background: #2ea043;
+    transform: scale(1.06);
+}
+
+/* Assistant Cards */
+.cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.card {
+    background: #161b22;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid #30363d;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    position: relative;
+    width: 80%;      /* responsive */
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Lift + glow on hover */
+.card:hover {
+    border-color: #58a6ff;
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 0 25px rgba(88,166,255,0.6);
+}
+
+/* Floating animation (optional for icons or images inside card) */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+.img-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.doctor-img {
+    width: 400px;
+    border-radius: 20px;
+    display: block;
+}
+/* Chat Page */
+.chat-box {
+    height: 450px;
+    background: #161b22;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #30363d;
+    overflow-y: auto;
+    box-shadow: inset 0 0 15px rgba(255,255,255,0.05);
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.message {
+    padding: 12px 18px;
+    border-radius: 12px;
+    margin: 12px 0;
+    max-width: 70%;
+    animation: popIn 0.3s ease-out;
+}
+
+/* Chat bubble animation */
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.user {
+    background: #1f6feb;
+    margin-left: auto;
+}
+.ai {
+    background: #21262d;
+    border-left: 3px solid #58a6ff;
+}
+
+/* Input Area */
+.input-area {
+    margin-top: 20px;
+    display: flex;
+}
+.input-area input {
+    flex: 1;
+    padding: 15px;
+    border-radius: 15px;
+    border: 2px solid #30363d;
+    background: #0d1117;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.input-area input:focus {
+    border-color: #58a6ff;
+    box-shadow: 0 0 10px rgba(88,166,255,0.4);
+}
+
+.input-area button {
+    width: 60px;
+    margin-left: 12px;
+    border-radius: 50%;
+    background: #238636;
+    border: none;
+    font-size: 22px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.input-area button:hover {
+    transform: scale(1.1);
+    background: #2ea043;
+}

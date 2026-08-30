@@ -1,0 +1,26 @@
+[project]
+name = "doctor-gpt"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "anthropic>=0.122.0",
+    "faiss-cpu>=1.15.0",
+    "fastapi>=0.141.1",
+    "gtts>=2.5.4",
+    "httpx>=0.28.1",
+    "langchain-community>=0.4.2",
+    "langchain-core>=1.5.5",
+    "langchain-huggingface>=1.2.2",
+    "langchain-ollama>=1.1.0",
+    "langchain-text-splitters>=1.1.2",
+    "ollama>=0.6.2",
+    "pyaudio>=0.2.14",
+    "python-dotenv>=1.2.2",
+    "sentence-transformers>=5.7.0",
+    "speechrecognition>=3.17.0",
+    "streamlit>=1.61.1",
+    "twilio>=9.11.0",
+    "uvicorn>=0.52.3",
+]

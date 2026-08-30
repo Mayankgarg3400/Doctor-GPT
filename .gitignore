@@ -1,0 +1,41 @@
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+wheels/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Generated files
+*.mp3
+*.jpg
+*.jpeg
+*.png
+*.wav
+
+# Local databases / caches
+chroma_db/
+*.db
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Large medical/RAG data
+medical-chatbot/data/
+medical-chatbot/vectorstore/
+
+# Backup files
+*.backup
+server_backup.py

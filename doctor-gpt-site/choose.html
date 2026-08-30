@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DoctorGPT | Choose Assistant</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background:
+                radial-gradient(circle at top, #173a67 0%, #0d1117 45%, #080b10 100%);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 1150px;
+            text-align: center;
+        }
+
+        /* Logo */
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #4ea3ff;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        /* Heading */
+        .title {
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 12px;
+
+            background: linear-gradient(90deg, #38bdf8, #2979ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 19px;
+            color: #aab7c7;
+            margin-bottom: 50px;
+        }
+
+        /* Cards */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .card-link {
+            text-decoration: none;
+            color: white;
+        }
+
+        .card {
+            min-height: 400px;
+            background: rgba(20, 39, 61, 0.85);
+            border: 1px solid rgba(78, 163, 255, 0.35);
+            border-radius: 24px;
+
+            padding: 28px 24px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #38bdf8;
+            box-shadow: 0 20px 50px rgba(41, 121, 255, 0.25);
+        }
+
+        .card img {
+            width: 210px;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 18px;
+            margin-bottom: 25px;
+            background: #fff;
+        }
+
+        .card h2 {
+            font-size: 25px;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .card p {
+            color: #9eacbd;
+            font-size: 15px;
+            line-height: 1.5;
+            max-width: 260px;
+        }
+
+        .arrow {
+            margin-top: 22px;
+            color: #38bdf8;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 45px;
+            color: #66758a;
+            font-size: 13px;
+        }
+
+        /* Tablet */
+        @media (max-width: 900px) {
+
+            .cards {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: auto;
+            }
+
+            .title {
+                font-size: 42px;
+            }
+
+            .card {
+                min-height: 360px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 500px) {
+
+            body {
+                padding: 25px 15px;
+            }
+
+            .title {
+                font-size: 34px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+
+            .card {
+                min-height: 330px;
+            }
+
+            .card img {
+                width: 180px;
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <div class="logo">
+            🩺 DoctorGPT
+        </div>
+
+        <h1 class="title">
+            Choose Your Assistant
+        </h1>
+
+        <p class="subtitle">
+            Select the type of medical AI assistance you need
+        </p>
+
+
+        <div class="cards">
+
+            <!-- TEXT ASSISTANT -->
+            <a href="text.html" class="card-link">
+
+                <div class="card">
+
+                    <img
+                        src="assets/download.jpg"
+                        alt="Text Assistant">
+
+                    <h2>💬 Text Assistant</h2>
+
+                    <p>
+                        Ask medical questions and get
+                        answers from the DoctorGPT knowledge base.
+                    </p>
+
+                    <div class="arrow">
+                        Open Assistant →
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- VISION ASSISTANT -->
+            <a href="vision.html" class="card-link">
+
+                <div class="card">
+
+                    <img
+                        src="assets/voice_assistent.jpg"
+                        alt="Vision Assistant">
+
+                    <h2>🧠 Vision Assistant</h2>
+
+                    <p>
+                        Upload a medical image and let
+                        DoctorGPT analyze it using AI vision.
+                    </p>
+
+                    <div class="arrow">
+                        Analyze Image →
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- EMERGENCY ASSISTANT -->
+            <a href="emergency.html" class="card-link">
+
+                <div class="card">
+
+                    <img
+                        src="assets/emergency.png"
+                        alt="Emergency Assistant">
+
+                    <h2>🚨 Emergency Assistant</h2>
+
+                    <p>
+                        Get quick AI guidance for
+                        urgent medical situations.
+                    </p>
+
+                    <div class="arrow">
+                        Get Help →
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <div class="footer">
+            DoctorGPT • AI-powered medical assistance
+        </div>
+
+    </div>
+
+</body>
+
+</html>

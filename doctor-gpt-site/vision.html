@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Vision Assistant | DoctorGPT</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        body {
+            background: #0d1117;
+            color: white;
+            font-family: "Segoe UI", sans-serif;
+            margin: 0;
+        }
+
+        .vision-header {
+            text-align: center;
+            padding: 30px 20px 15px;
+        }
+
+        .vision-header h1 {
+            font-size: 42px;
+            color: #4ea3ff;
+            margin: 0;
+            font-weight: 800;
+        }
+
+        .vision-header p {
+            color: #9da9b8;
+            font-size: 17px;
+        }
+
+
+        .vision-container {
+
+            width: 70%;
+            max-width: 850px;
+
+            margin: 20px auto 50px;
+
+            background: #0f1521;
+
+            border-radius: 20px;
+
+            padding: 25px;
+
+            box-shadow:
+                0 0 25px rgba(0, 0, 0, 0.5);
+
+        }
+
+
+        /* Upload */
+
+        .upload-box {
+
+            border: 2px dashed #2ea8ff;
+
+            border-radius: 16px;
+
+            padding: 35px;
+
+            text-align: center;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+        .upload-box:hover {
+
+            background: #14243a;
+
+            border-color: #4ea3ff;
+
+        }
+
+        .upload-box h3 {
+
+            margin-bottom: 10px;
+
+            color: #4ea3ff;
+
+        }
+
+        .upload-box p {
+
+            color: #8b98a8;
+
+        }
+
+
+        #imageInput {
+
+            display: none;
+
+        }
+
+
+        /* Preview */
+
+        #preview-img {
+
+            display: none;
+
+            width: 320px;
+
+            max-width: 90%;
+
+            margin: 25px auto;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 0 20px rgba(46, 168, 255, 0.25);
+
+        }
+
+
+        /* Question */
+
+        .question-box {
+
+            display: flex;
+
+            gap: 10px;
+
+            margin-top: 20px;
+
+        }
+
+
+        #questionInput {
+
+            flex: 1;
+
+            padding: 15px;
+
+            border: none;
+
+            outline: none;
+
+            border-radius: 12px;
+
+            background: #1e2633;
+
+            color: white;
+
+            font-size: 16px;
+
+        }
+
+
+        #questionInput::placeholder {
+
+            color: #7d8998;
+
+        }
+
+
+        /* Buttons */
+
+        .button-row {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
+            margin-top: 20px;
+
+        }
+
+
+        .vision-btn {
+
+            padding: 13px 25px;
+
+            border: none;
+
+            border-radius: 50px;
+
+            background: #2ea8ff;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+
+        }
+
+
+        .vision-btn:hover {
+
+            background: #1b76b4;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        .vision-btn:disabled {
+
+            opacity: 0.5;
+
+            cursor: not-allowed;
+
+            transform: none;
+
+        }
+
+
+        .recording {
+
+            background: #e53935 !important;
+
+            box-shadow:
+                0 0 20px rgba(229, 57, 53, 0.6);
+
+        }
+
+
+        /* Status */
+
+        #status {
+
+            text-align: center;
+
+            margin-top: 20px;
+
+            color: #8ed1ff;
+
+            min-height: 22px;
+
+        }
+
+
+        /* Result */
+
+        .result-box {
+
+            display: none;
+
+            margin-top: 30px;
+
+            padding: 25px;
+
+            border-radius: 18px;
+
+            background: #172536;
+
+            border-left: 4px solid #2ea8ff;
+
+            text-align: left;
+
+        }
+
+
+        .result-title {
+
+            color: #4ea3ff;
+
+            font-size: 20px;
+
+            font-weight: 700;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        #answer {
+
+            color: #e7edf5;
+
+            font-size: 16px;
+
+            line-height: 1.7;
+
+            white-space: pre-wrap;
+
+        }
+
+
+        /* Mobile */
+
+        @media (max-width: 700px) {
+
+            .vision-container {
+
+                width: 90%;
+
+                padding: 18px;
+
+            }
+
+            .vision-header h1 {
+
+                font-size: 32px;
+
+            }
+
+            .question-box {
+
+                flex-direction: column;
+
+            }
+
+            #preview-img {
+
+                width: 280px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="vision-header">
+
+        <h1>🧠 Vision Assistant</h1>
+
+        <p>
+            Upload a medical image and ask DoctorGPT about it
+        </p>
+
+    </div>
+
+
+    <div class="vision-container">
+
+
+        <!-- IMAGE UPLOAD -->
+
+        <label
+            class="upload-box"
+            for="imageInput"
+        >
+
+            <h3>
+                📤 Click here to choose an image
+            </h3>
+
+            <p>
+                JPG, JPEG, PNG supported
+            </p>
+
+        </label>
+
+
+        <input
+            id="imageInput"
+            type="file"
+            accept="image/*"
+        >
+
+
+        <!-- PREVIEW -->
+
+        <img
+            id="preview-img"
+            alt="Selected medical image"
+        >
+
+
+        <!-- QUESTION -->
+
+        <div class="question-box">
+
+            <input
+                id="questionInput"
+                type="text"
+                placeholder="Ask something about this image..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="button-row">
+
+            <button
+                class="vision-btn"
+                id="recordBtn"
+            >
+                🎤 Speak
+            </button>
+
+
+            <button
+                class="vision-btn"
+                id="analyzeBtn"
+            >
+                🔍 Analyze Image
+            </button>
+
+        </div>
+
+
+        <!-- STATUS -->
+
+        <div id="status"></div>
+
+
+        <!-- RESULT -->
+
+        <div
+            class="result-box"
+            id="resultBox"
+        >
+
+            <div class="result-title">
+                🤖 DoctorGPT
+            </div>
+
+
+            <div id="answer"></div>
+
+
+            <div class="button-row">
+
+                <button
+                    class="vision-btn"
+                    id="speakAnswerBtn"
+                >
+                    🔊 Speak Answer
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <script src="vision.js"></script>
+
+</body>
+
+</html>

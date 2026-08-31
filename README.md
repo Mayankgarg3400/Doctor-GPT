@@ -4,8 +4,13 @@
 
 Doctor-GPT is an AI-powered medical assistance platform that provides multiple ways to interact with an intelligent healthcare assistant through **Text, Vision, Voice, and Emergency Assistance**.
 
+
 > ⚠️ **Medical Disclaimer:** Doctor-GPT is an AI-based assistance and educational project. It is not a replacement for a qualified doctor or medical professional. For serious symptoms, diagnosis, treatment decisions, or emergencies, always consult a qualified healthcare professional or contact your local emergency services.
 
+
+## 🖥️ Project Preview
+
+![Doctor-GPT](https://github.com/Mayankgarg3400/Doctor-GPT/blob/main/doctor-gpt.jpg)
 ---
 
 ## ✨ Features
@@ -303,49 +308,6 @@ Doctor-GPT follows basic security practices:
 * Large medical datasets are excluded from the repository.
 * Generated vector stores are excluded from Git.
 * Private credentials should never be placed inside frontend JavaScript.
-
----
-
-# 📊 Project Status
-
-### ✅ Implemented
-
-* [x] Text-based medical assistant
-* [x] Vision-based assistant
-* [x] Voice interaction pipeline
-* [x] Emergency assistant
-* [x] Medical knowledge retrieval
-* [x] Frontend interfaces
-* [x] Python backend
-* [x] GitHub repository
-
-### 🚀 Planned Improvements
-
-* [ ] Production deployment
-* [ ] Improved authentication
-* [ ] Conversation history
-* [ ] Database integration
-* [ ] Better medical RAG pipeline
-* [ ] Improved performance
-* [ ] Production monitoring
-* [ ] Mobile UI improvements
-* [ ] Cloud deployment
-
----
-
-# 🗺️ Future Improvements
-
-Some planned improvements include:
-
-* 🤖 Multi-model support
-* 🧠 Improved medical document retrieval
-* 💬 Persistent conversation history
-* 🔐 User authentication
-* 🗄️ Database integration
-* 🚨 Improved emergency workflows
-* 📊 Production monitoring
-* ☁️ Cloud deployment
-* 📱 Better mobile responsiveness
 
 ---
 
